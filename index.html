@@ -8,14 +8,49 @@
   </head>
   <body>
     <script>
+      function game() {
+        //this is the main instance of the game
+
+        for (let i = 1; i < 6; i++) {
+          // your code here!
+          console.log("Round " + i);
+
+          playARound(playerSelection, computerSelection[random]);
+        }
+      }
+      //initializing user and computer choices
       const playerSelection = prompt("Choose one, Rock Paper or Scissors.");
       const computerSelection = ["Rock", "Paper", "Scissors"];
 
-const random = Math.floor(Math.random() * computerSelection.length);
-console.log("Computer :" + random, computerSelection[random] + "  Player :" + playerSelection);
-   let tie = if (playerSelection === computerSelection) {
-        return"It's a tie!";
-    }
+      let random = Math.floor(Math.random() * 3);
+      console.log(
+        "Computer : " +
+          computerSelection[random] +
+          "  Player : " +
+          playerSelection
+      );
+      const playerLower = playerSelection.toLowerCase();
+      const computerString = random.toString();
+      let computerLower = random.toString();
+
+      //function block defining a single round
+      function playARound() {
+        if (playerLower === computerSelection[random]) {
+          return "It's a tie!";
+        } else if (
+          playerLower === "rock" &&
+          computerSelection[random] === "Paper"
+        ) {
+          return "Paper covers rock, you lose!";
+        } else {
+          return "Try again";
+        }
+        console.log(playerLower, computerSelection[random]);
+      }
+
+      //All my stupid console.log checks.
+      /*  console.log(playerSelection, computerSelection);
+      console.log(computerSelection, computerLower, computerString);*/
     </script>
   </body>
 </html>
