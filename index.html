@@ -39,7 +39,7 @@
             playerLower === "rock" &&
             computerSelection[random] === "Paper"
           ) {
-            playerScore++;
+            computerScore++;
           } else if (
             playerLower === "rock" &&
             computerSelection[random] === "Scissors"
@@ -49,7 +49,7 @@
             playerLower === "paper" &&
             computerSelection[random] === "Rock"
           ) {
-            computerScore++;
+            playerScore++;
           } else if (
             playerLower === "paper" &&
             computerSelection[random] === "Scissors"
@@ -64,7 +64,7 @@
             playerLower === "scissors" &&
             computerSelection[random] === "Paper"
           ) {
-            computerScore++;
+            playerScore++;
           }
           console.log("Player score is " + playerScore);
           console.log("Computer score is " + computerScore);
