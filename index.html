@@ -8,14 +8,12 @@
   </head>
   <body>
     <script>
-      //initializing user and computer choices
-
+      //this is the main instance of the game
       function game() {
         let playerScore = 0;
         let computerScore = 0;
         for (let i = 1; i < 6; i++) {
-          // your code here!
-
+          //initializing user and computer choices
           const playerSelection = prompt(
             "Choose your weapon, Rock, Paper or Scissors."
           );
@@ -25,14 +23,17 @@
           const playerLower = playerSelection.toLowerCase();
           const computerString = computerSelection[random];
           let computerLower = computerString.toLowerCase();
-          
 
-          //this is the main instance of the game
           //function block defining a single round
-console.log("Round " + i);
-console.log("Computer : " + computerSelection[random] + "  Player : " + playerSelection);
+          console.log("Round " + i);
+          console.log(
+            "Computer : " +
+              computerSelection[random] +
+              "  Player : " +
+              playerSelection
+          );
           if (playerLower === computerSelection[random]) {
-            "It's a tie!";
+            ("It's a tie!");
           } else if (
             playerLower === "rock" &&
             computerSelection[random] === "Paper"
@@ -66,18 +67,13 @@ console.log("Computer : " + computerSelection[random] + "  Player : " + playerSe
           }
           console.log("Player score is " + playerScore);
           console.log("Computer score is " + computerScore);
-          
         }
         if (computerScore > playerScore) {
-            console.log("Computer wins!");
-          } else if (playerScore > computerScore) {
-            console.log("Player wins!");
-          }
+          console.log("Computer wins!");
+        } else if (playerScore > computerScore) {
+          console.log("Player wins!");
+        }
       }
-
-      //All my stupid console.log checks.
-      /*  console.log(playerSelection, computerSelection);
-      console.log(computerSelection, computerSelection[random], computerString);*/
     </script>
   </body>
 </html>
