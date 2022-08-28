@@ -8,49 +8,73 @@
   </head>
   <body>
     <script>
+      let playerScore = 0;
+      let computerScore = 0;
+
+      //initializing user and computer choices
+
       function game() {
+        const playerSelection = prompt("Choose one, Rock, Paper or Scissors.");
+        const computerSelection = ["Rock", "Paper", "Scissors"];
+
+        let random = Math.floor(Math.random() * 3);
+        console.log(
+          "Computer : " +
+            computerSelection[random] +
+            "  Player : " +
+            playerSelection
+        );
+        const playerLower = playerSelection.toLowerCase();
+        const computerString = computerSelection[random];
         //this is the main instance of the game
 
+        let computerLower = computerString.toLowerCase();
         for (let i = 1; i < 6; i++) {
           // your code here!
-          console.log("Round " + i);
 
-          playARound(playerSelection, computerSelection[random]);
+          //function block defining a single round
+
+          if (playerLower === computerSelection[random]) {
+            return "It's a tie!";
+          } else if (
+            playerLower === "rock" &&
+            computerSelection[random] === "paper"
+          ) {
+            return playerScore++;
+          } else if (
+            playerLower === "rock" &&
+            computerSelection[random] === "scissors"
+          ) {
+            return playerscore++;
+          } else if (
+            playerLower === "paper" &&
+            computerSelection[random] === "rock"
+          ) {
+            return computerScore++;
+          } else if (
+            playerLower === "paper" &&
+            computerSelection[random] === "scissors"
+          ) {
+            return computerScore++;
+          } else if (
+            playerLower === "scissors" &&
+            computerSelection[random] === "rock"
+          ) {
+            return computerScore++;
+          } else if (
+            playerLower === "scissors" &&
+            computerSelection[random] === "paper"
+          ) {
+            return computerScore++;
+          }
         }
-      }
-      //initializing user and computer choices
-      const playerSelection = prompt("Choose one, Rock Paper or Scissors.");
-      const computerSelection = ["Rock", "Paper", "Scissors"];
-
-      let random = Math.floor(Math.random() * 3);
-      console.log(
-        "Computer : " +
-          computerSelection[random] +
-          "  Player : " +
-          playerSelection
-      );
-      const playerLower = playerSelection.toLowerCase();
-      const computerString = random.toString();
-      let computerLower = random.toString();
-
-      //function block defining a single round
-      function playARound() {
-        if (playerLower === computerSelection[random]) {
-          return "It's a tie!";
-        } else if (
-          playerLower === "rock" &&
-          computerSelection[random] === "Paper"
-        ) {
-          return "Paper covers rock, you lose!";
-        } else {
-          return "Try again";
-        }
-        console.log(playerLower, computerSelection[random]);
+        console.log(playerScore);
+        console.log(computerScore);
       }
 
       //All my stupid console.log checks.
       /*  console.log(playerSelection, computerSelection);
-      console.log(computerSelection, computerLower, computerString);*/
+      console.log(computerSelection, computerSelection[random], computerString);*/
     </script>
   </body>
 </html>
