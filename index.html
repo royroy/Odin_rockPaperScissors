@@ -8,68 +8,71 @@
   </head>
   <body>
     <script>
-      let playerScore = 0;
-      let computerScore = 0;
-
       //initializing user and computer choices
 
       function game() {
-        const playerSelection = prompt("Choose one, Rock, Paper or Scissors.");
-        const computerSelection = ["Rock", "Paper", "Scissors"];
-
-        let random = Math.floor(Math.random() * 3);
-        console.log(
-          "Computer : " +
-            computerSelection[random] +
-            "  Player : " +
-            playerSelection
-        );
-        const playerLower = playerSelection.toLowerCase();
-        const computerString = computerSelection[random];
-        //this is the main instance of the game
-
-        let computerLower = computerString.toLowerCase();
+        let playerScore = 0;
+        let computerScore = 0;
         for (let i = 1; i < 6; i++) {
           // your code here!
 
-          //function block defining a single round
+          const playerSelection = prompt(
+            "Choose your weapon, Rock, Paper or Scissors."
+          );
+          const computerSelection = ["Rock", "Paper", "Scissors"];
 
+          let random = Math.floor(Math.random() * 3);
+          const playerLower = playerSelection.toLowerCase();
+          const computerString = computerSelection[random];
+          let computerLower = computerString.toLowerCase();
+          
+
+          //this is the main instance of the game
+          //function block defining a single round
+console.log("Round " + i);
+console.log("Computer : " + computerSelection[random] + "  Player : " + playerSelection);
           if (playerLower === computerSelection[random]) {
-            return "It's a tie!";
+            "It's a tie!";
           } else if (
             playerLower === "rock" &&
-            computerSelection[random] === "paper"
+            computerSelection[random] === "Paper"
           ) {
-            return playerScore++;
+            playerScore++;
           } else if (
             playerLower === "rock" &&
-            computerSelection[random] === "scissors"
+            computerSelection[random] === "Scissors"
           ) {
-            return playerscore++;
+            playerScore++;
           } else if (
             playerLower === "paper" &&
-            computerSelection[random] === "rock"
+            computerSelection[random] === "Rock"
           ) {
-            return computerScore++;
+            computerScore++;
           } else if (
             playerLower === "paper" &&
-            computerSelection[random] === "scissors"
+            computerSelection[random] === "Scissors"
           ) {
-            return computerScore++;
+            computerScore++;
           } else if (
             playerLower === "scissors" &&
-            computerSelection[random] === "rock"
+            computerSelection[random] === "Rock"
           ) {
-            return computerScore++;
+            computerScore++;
           } else if (
             playerLower === "scissors" &&
-            computerSelection[random] === "paper"
+            computerSelection[random] === "Paper"
           ) {
-            return computerScore++;
+            computerScore++;
           }
+          console.log("Player score is " + playerScore);
+          console.log("Computer score is " + computerScore);
+          
         }
-        console.log(playerScore);
-        console.log(computerScore);
+        if (computerScore > playerScore) {
+            console.log("Computer wins!");
+          } else if (playerScore > computerScore) {
+            console.log("Player wins!");
+          }
       }
 
       //All my stupid console.log checks.
